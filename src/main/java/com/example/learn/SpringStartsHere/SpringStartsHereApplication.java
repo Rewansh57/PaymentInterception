@@ -1,14 +1,26 @@
 package com.example.learn.SpringStartsHere;
 
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.example.learn.SpringStartsHere.model.Comment;
+import com.example.learn.SpringStartsHere.service.CommentService;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-@SpringBootApplication
+
 public class SpringStartsHereApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringStartsHereApplication.class,args);
+	AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(ProjectConfig.class);
+	CommentService commentService=context.getBean(CommentService.class);
+	Comment comment=new Comment();
+	comment.setText("This is a comment");
+	comment.setAuthor("My shit");
+
+	commentService.publishComment(comment);
+
+
+
+
+
 
 
 
