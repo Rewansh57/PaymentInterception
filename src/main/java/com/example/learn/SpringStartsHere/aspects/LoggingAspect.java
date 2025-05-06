@@ -8,9 +8,6 @@ import org.springframework.stereotype.Component;
 @Component
 
 public class LoggingAspect {
-    @Before("execution(* com.example.learn.SpringStartsHere.service.CommentService.publicComment(..))")
-    public void show(){
-        System.out.println("LoggingAspect");
+    @Before("execution(* ")
 
-    }
 }
