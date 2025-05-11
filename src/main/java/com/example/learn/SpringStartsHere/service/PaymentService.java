@@ -1,6 +1,8 @@
 package com.example.learn.SpringStartsHere.service;
 
 
+import com.example.learn.SpringStartsHere.exceptions.InValidCredentialsExceptions;
+import com.example.learn.SpringStartsHere.model.AccountStatus;
 import com.example.learn.SpringStartsHere.model.Receipt;
 import com.example.learn.SpringStartsHere.repositories.BankRepository;
 import com.example.learn.SpringStartsHere.repositories.ReceiptRepository;
@@ -8,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.Optional;
-import java.util.logging.Logger;
+
 
 @Service
 public class PaymentService {
@@ -47,6 +49,21 @@ public class PaymentService {
 
 
     }
+    public AccountStatus getStatus(Long accountId){
+        Optional<AccountStatus> userStatus=bankRepository.getAccountbyAccountId(accountId);
+        if (userStatus.isPresent()) {
+
+            return userStatus.get();
+
+        }
+
+
+        throw new InValidCredentialsExceptions("The Account with "+accountId+"does not exist");
+
+
+
+    }
+
 
 
 }

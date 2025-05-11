@@ -24,6 +24,10 @@ public class Receipt {
 
     }
 
+    public Receipt() {
+
+    }
+
     public String getServiceName() {
         return serviceName;
     }
