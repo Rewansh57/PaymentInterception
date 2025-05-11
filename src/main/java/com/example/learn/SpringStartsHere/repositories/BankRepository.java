@@ -21,7 +21,9 @@ public interface BankRepository extends JpaRepository<AccountStatus, Long> {
     @Query("Update AccountStatus a Set a.balance= :amt Where a.accountId= :AccId")
     void updateBalance(@Param("amt") BigDecimal amt, @Param("AccId") Long AccId);
 
-    @Query("Select balance from AccountStatus a where accountId=: accId)
+    @Query("Select a.balance from AccountStatus a where a.accountId=: accId")
+    Optional<BigDecimal> getBalanceByAccountId(@Param("accId") Long accId);
+
 
 
 }
