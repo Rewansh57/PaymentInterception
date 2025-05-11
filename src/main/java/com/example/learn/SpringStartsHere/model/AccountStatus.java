@@ -2,6 +2,8 @@ package com.example.learn.SpringStartsHere.model;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity
 
 
@@ -17,7 +19,7 @@ public class AccountStatus {
     private String name;
 
 
-    private double balance;
+    private BigDecimal balance;
 
 
     public Long getUserId() {
@@ -44,11 +46,15 @@ public class AccountStatus {
         this.name = name;
     }
 
-    public double getBalance() {
+    public BigDecimal getBalance() {
         return balance;
     }
 
-    public void setBalance(double balance) {
+    public void setBalance(BigDecimal balance) {
         this.balance = balance;
+    }
+    public void getUserInfo(){
+        System.out.println("Acc id" +this.accountId+" Name "+this.name+" Balance "+this.balance);
+
     }
 }

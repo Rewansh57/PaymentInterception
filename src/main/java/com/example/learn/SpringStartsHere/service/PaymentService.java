@@ -30,7 +30,9 @@ public class PaymentService {
         }
     }
 
-    public String paymentRequest(Long accountId,String name){
+    public String paymentRequest(Long accountId,String name,int serviceType){
+
+
 
 
     }
