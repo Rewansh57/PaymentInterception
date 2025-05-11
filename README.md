@@ -7,4 +7,4 @@ Java 23
 Spring Boot 
 Spring Jpa(Hibernate)
 Postgresql
-Apache Maven 
+Apache Maven
